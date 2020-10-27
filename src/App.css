@@ -7,7 +7,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", sans-serif; /*בחירת פונט*/
 }
 
 .map {
@@ -16,12 +16,14 @@
 }
 
 .popup .leaflet-popup-content-wrapper {
+  /*חלונית המידה לכל נקודה*/
   justify-content: center;
   background: rgba(256, 256, 256, 0.7);
   direction: rtl;
 }
 
 .popup .leaflet-popup-close-button {
+  /*לחצן האיקס*/
   left: 5px;
 }
 
@@ -42,7 +44,7 @@
 .popup h1 {
   font-weight: bold;
   text-align: right;
-  border-bottom: orange 3px solid;
+  border-bottom: #454b66 3px solid;
 }
 
 .filter {
@@ -50,9 +52,9 @@
   min-height: 60px;
   background: black;
   position: fixed;
-  right: -150px;
+  top: -90px;
+  right: 0%;
   overflow: hidden;
-  top: 100px;
   z-index: 1;
   transition: 0.5s;
   display: flex;
@@ -61,21 +63,33 @@
   align-items: flex-end;
   padding: 10px;
   border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
 }
 
 .filter:hover {
-  right: 0px;
+  top: 0px;
   opacity: 0.7;
   background: whitesmoke;
 }
 
-.filter:hover * {
+.filter:hover input[type="checkbox"] {
   opacity: 1;
 }
 
-.filter * {
+.filter input[type="checkbox"] {
   opacity: 0;
+  transition: 0.5s;
+}
+
+.filter:hover h1 {
+  color: black;
+}
+
+.filter h1 {
+  opacity: 1;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
   transition: 0.5s;
 }
 
@@ -94,8 +108,8 @@
 
 .filter input[type="checkbox"]:nth-child(1)::after {
   content: "בתי ספר";
-  border-color: orange;
-  color: orange;
+  border-color: #454b66;
+  color: #454b66;
 }
 
 .filter input[type="checkbox"]:nth-child(1):checked:after {
@@ -105,8 +119,8 @@
 
 .filter input[type="checkbox"]:nth-child(2)::after {
   content: "מרכזים קהילתיים";
-  border-color: green;
-  color: green;
+  border-color: #3c91e6; /*לחצן תפריט*/
+  color: #3c91e6;
 }
 
 .filter input[type="checkbox"]:nth-child(2):checked:after {

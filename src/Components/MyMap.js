@@ -13,16 +13,9 @@ function MyMap() {
   return (
     <React.Fragment>
       <div className='filter'>
-        <input
-          type='checkbox'
-          onClick={() => setShowSchools(!ShowSchools)}
-          style={{
-            ":before": {
-              content: "hello",
-            },
-          }}
-        />
+        <input type='checkbox' onClick={() => setShowSchools(!ShowSchools)} />
         <input type='checkbox' onClick={() => setShowCenters(!ShowCenters)} />
+        <h1>שכבות לצפייה</h1>
       </div>
       <Map className='map' center={position} zoom={14}>
         <TileLayer
@@ -62,7 +55,7 @@ function MyMap() {
                   }}
                 >
                   <Popup className='popup'>
-                    <h1 style={{ borderColor: "green" }}>
+                    <h1 style={{ borderColor: "#3C91E6" }}>
                       {item.CommunityCenterName}
                     </h1>
                     <p>כתובת: {item.Address}</p>
